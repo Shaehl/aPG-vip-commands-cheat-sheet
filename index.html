@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ow9u's aPG vip commands cheat sheet</title>
+    <meta name="description" content="ow9u's aPG vip commands cheat sheet"/>
+    <meta name="url" content="https://github.com/Shaehl/aPG-vip-commands-cheat-sheet/">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <p><a href="https://github.com/Shaehl/aPG-vip-commands-cheat-sheet/">github</a></p>
+            <br><p>ownership belongs to ow9u</p>
+        </div>
+        <div id="commandSections"></div>
+        <input type="text" placeholder="preview" style="width: 100%;">
+    </div>
+    <script src="index.js"></script>
+    <script>
+        fetch("https://raw.githubusercontent.com/Shaehl/aPG-vip-commands-cheat-sheet/main/src/storage.json")
+        .then(res => res.json())
+        .then((json) => {
+            console.log(json)
+            window.lists = json.lists
+            lists.targetAll = [lists.targetPlates,lists.targetPlayers].flat()
+
+            initCommandSections(json.commands)
+        })
+    </script>
+</body>
+</html>
