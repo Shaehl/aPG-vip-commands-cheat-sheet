@@ -1,0 +1,9 @@
+{
+    "lists": {
+        "events": ["moai","anvil","missile","eyebeam","lazar","chair","seat","officechair","throne","rocketchair","healthpotion","forcefieldpotion","trash","bamboo","trains","blackhole","healplate","lightning","snowglobe","hurricane","randompotion","space","legos","pbjtime","lootbox","piano","pianobarrage","treadmill","jellybeans","house","shrink","beans","grave","swordfight","bomb","grow","timebomb","sandstorm","thunderstorm","bombhead","lightningbarrage","tower","tree","resize","pirateship","nuke","solarflare","tsunami","lavatsunami","volcano","arrowbarrage","firearrowbarrage","molotovbarrage","stretch","lootboxrain","trap","zombies","rockets","lower","raise","landmine","bridge","portal","prison","stink","stronk","elevator","meteor","earthquake","acidrain","wall","shake","freeze","rainingtix","tporb","meteorshower","goldentoilet","oneFlop","resizeplayer","ufoCrash","allStretch","allResize","beehive","fireplate","motherland","ghostplate","barrelroll","normalizeplate","gravcoil","teleport","plateteleport","playerswap","plateswap","icyplate","spinplate","tripmine","theFlop"],
+        "modifiers": ["forest","randomgear","risinglava","icyplates","resizedplates","onehp","apocalypse","minefield"],
+        "effects": ["fire","heal","stun","ragdoll","freeze","bees","forcefield"],
+        "targetPlayers": ["all","others","me"],
+        "targetPlates": ["plate-all","plate-nearest","plate-#"]
+    }
+}
