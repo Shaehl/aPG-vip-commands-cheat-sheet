@@ -1,4 +1,27 @@
 {
+    "commands": [
+        [
+            "event", 
+            {"name": "event", "type": "select", "list": "events"},
+            {"name": "target", "type": "select", "list": "targetAll"}
+        ],
+        [
+            "mod",
+            {"name": "modifier", "type": "select", "list": "modifiers"}
+        ],
+        [
+            "dif",
+            {"name": "difficulty", "type": "number", "value": 1}
+        ],
+        [
+            "effect", 
+            {"name": "effect", "type": "select", "list": "effects"},
+            {"name": "target", "type": "select", "list": "targetPlayers"},
+            {"name": "duration", "type": "number", "value": 10}
+        ],
+        ["endgame"],
+        ["startsuddendeath"]
+    ],
     "lists": {
         "events": ["moai","anvil","missile","eyebeam","lazar","chair","seat","officechair","throne","rocketchair","healthpotion","forcefieldpotion","trash","bamboo","trains","blackhole","healplate","lightning","snowglobe","hurricane","randompotion","space","legos","pbjtime","lootbox","piano","pianobarrage","treadmill","jellybeans","house","shrink","beans","grave","swordfight","bomb","grow","timebomb","sandstorm","thunderstorm","bombhead","lightningbarrage","tower","tree","resize","pirateship","nuke","solarflare","tsunami","lavatsunami","volcano","arrowbarrage","firearrowbarrage","molotovbarrage","stretch","lootboxrain","trap","zombies","rockets","lower","raise","landmine","bridge","portal","prison","stink","stronk","elevator","meteor","earthquake","acidrain","wall","shake","freeze","rainingtix","tporb","meteorshower","goldentoilet","oneFlop","resizeplayer","ufoCrash","allStretch","allResize","beehive","fireplate","motherland","ghostplate","barrelroll","normalizeplate","gravcoil","teleport","plateteleport","playerswap","plateswap","icyplate","spinplate","tripmine","theFlop"],
         "modifiers": ["forest","randomgear","risinglava","icyplates","resizedplates","onehp","apocalypse","minefield"],
