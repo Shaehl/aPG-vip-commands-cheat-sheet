@@ -43,6 +43,25 @@ const onParamInput = (e, paramItem, sectionItem) => {
     updateCommandSection(sectionItem)
 }
 
+const r = (parentNode, optionsList) => {
+    optionsList.forEach(v => {
+        let node
+        if (typeof v == "object") {
+            let groupName = v.groupName
+            if (groupName) {
+                node = document.createElement("optgroup")
+                node.label = groupName
+                r(node, v.optionsList)
+            }
+        } else {
+            node = document.createElement("option")
+            node.value = v
+            node.innerText = v
+        }
+        if (node) parentNode.appendChild(node)
+    })
+}
+
 const createParameterDiv = (paramItem, sectionItem) => {
     let div = document.createElement("div")
 
@@ -57,15 +76,9 @@ const createParameterDiv = (paramItem, sectionItem) => {
             baseNode = document.createElement("select")
             baseNode.name = paramItem.name
 
-            let list = lists[paramItem.list]
-            if (list) {
-                list.forEach(k => {
-                    let optionNode = document.createElement("option")
-                    optionNode.value = k
-                    optionNode.innerText = k
-                    baseNode.appendChild(optionNode)
-                })
-            }
+            let {optionName} = paramItem
+            let optionsList = options[optionName]
+            if (optionsList) r(baseNode, optionsList)
             break
         default:
             baseNode = document.createElement("input")
