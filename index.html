@@ -26,9 +26,8 @@
         fetch("src/storage.json")
         .then(res => res.json())
         .then((json) => {
-            console.log(json)
-            window.lists = json.lists
-            lists.targetAll = [lists.targetPlates,lists.targetPlayers].flat()
+            window.options = json.options
+            options.targetAll = [options.targetPlates,options.targetPlayers].flat()
 
             initCommandSections(json.commands)
         })
