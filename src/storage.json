@@ -24,13 +24,24 @@
     ],
     "options": {
         "events": [
-            "moai","anvil","missile","eyebeam","lazar","chair","seat","officechair","throne","rocketchair","healthpotion","forcefieldpotion","trash","bamboo","trains","blackhole","healplate","lightning","snowglobe","hurricane","space","legos","pbjtime","lootbox","piano","pianobarrage","treadmill","jellybeans","house","shrink","beans","grave","swordfight","bomb","grow","timebomb","sandstorm","thunderstorm","bombhead","lightningbarrage","tower","tree","resize","pirateship","nuke","solarflare","tsunami","lavatsunami","volcano","arrowbarrage","firearrowbarrage","molotovbarrage","lootboxrain","trap","zombies","rockets","lower","raise","landmine","bridge","portal","prison","stink","stronk","elevator","meteor","earthquake","acidrain","wall","freeze","rainingtix","tporb","meteorshower","goldentoilet","oneFlop","resizeplayer","ufoCrash","allStretch","beehive","fireplate","motherland","ghostplate","barrelroll","normalizeplate","gravcoil","teleport","plateteleport","playerswap","plateswap","icyplate","spinplate","tripmine","theflop","plateresize","allgrow","allshrink","ballplate","tiltedplate","errorflop","killspinner","alllower","allraise","orbit","earthquake","shakyplate","platestretch","thundercloud","lightningstrike","airstrikephone","speedingwall","skyscraper","electricfence","explosivebarrel","freezingbarrel","toxicbarrel","tesla","bananapeel","rocketlauncher","mushroom","toaster","campfire","cauldron","rollingpin","speedcoil","gasolinecan","speedpotion","jumppotion","paintballgun",
+            {
+                "groupName": "plate",
+                "optionsList": ["moai","anvil","lazar","chair","seat","officechair","throne","rocketchair","trash","bamboo","trains","blackhole","healplate","lightning","snowglobe","legos","pbjtime","lootbox","piano","treadmill","house","shrink","grave","swordfight","grow","timebomb","lightningbarrage","tower","tree","resize","nuke","volcano","trap","lower","raise","landmine","bridge","portal","prison","elevator","meteor","wall","goldentoilet","ufoCrash","beehive","fireplate","motherland","ghostplate","barrelroll","normalizeplate","plateteleport","plateswap","icyplate","spinplate","plateresize","ballplate","tiltedplate","killspinner","orbit","shakyplate","platestretch","thundercloud","lightningstrike","skyscraper","electricfence","explosivebarrel","freezingbarrel","toxicbarrel","tesla","mushroom","toaster","campfire","cauldron","geyser","turret","keg","hotairballoon","discoplate","sunflower","pizza"]
+            },
+            {
+                "groupName": "arena",
+                "optionsList": ["missile","eyebeam","hurricane","space","pianobarrage","jellybeans","sandstorm","thunderstorm","pirateship","solarflare","tsunami","lavatsunami","arrowbarrage","firearrowbarrage","molotovbarrage","lootboxrain","zombies","rockets","moonfall","earthquake","acidrain","rainingtix","meteorshower","allStretch","theflop","allgrow","allshrink","alllower","allraise","speedingwall","rollingpin","artillery","tornado","firetornado","seamines","fishhook","noodlespill"]
+            },
+            {
+                "groupName": "player",
+                "optionsList": ["healthpotion","forcefieldpotion","beans","bomb","bombhead","stink","stronk","freeze","tporb","oneFlop","resizeplayer","gravcoil","teleport","playerswap","tripmine","errorflop","airstrikephone","bananapeel","rocketlauncher","speedcoil","gasolinecan","speedpotion","jumppotion","freezeray","paintballgun","bloxycola","molotov","sword","lightningstaff","tnt"]
+            },
             {
                 "groupName": "random",
-                "optionsList": ["randompotion","barrage","celestial","classics","flopplayer","fallingobjects","lootboxes","nukes","pirateships","randplateeff","randompopup","randomchair","allresize","transport","plateupdown","allupdown","randombuild","randomgear","randplreff","shake","stretch","teleportation","tsunamis","weather","downfall","heavywinds","lightning","randombarrel"]
+                "optionsList": ["randompotion","barrage","celestial","classics","flopplayer","fallingobjects","lootboxes","nukes","pirateships","randplateeff","randompopup","randomchair","allresize","transport","plateupdown","allupdown","randombuild","randomgear","randplreff","shake","stretch","teleportation","tsunamis","weather","downfall","heavywinds","lightning","randombarrel","tornadoes"]
             }
         ],
-        "modifiers": ["forest","randomgear","risinglava","icyplates","resizedplates","onehp","apocalypse","minefield","nighttime","foggyarena","ballplates","scattered","city","vanishingplates","stretchedplates"],
+        "modifiers": ["forest","randomgear","risinglava","icyplates","resizedplates","onehp","apocalypse","minefield","nighttime","foggyarena","ballplates","trampolineplates","scatteredplates","city","vanishingplates","stretchedplates","desert"],
         "effects": ["fire","heal","stun","ragdoll","freeze","bees","forcefield","jumpboost","speed"],
         "targetPlayers": ["all","others","me"],
         "targetPlates": ["plate-all","plate-nearest","plate-#"]
