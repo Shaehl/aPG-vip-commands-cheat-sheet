@@ -8,32 +8,43 @@
     <title>ow9u's aPG vip commands cheat sheet</title>
     <meta name="description" content="a bit useful cheat sheet">
     <meta name="author" content="ow9u">
-
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="pico/css/pico.classless.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="section">
-            <p>
-                <a href="https://github.com/Shaehl/aPG-vip-commands-cheat-sheet/">github</a>
-                <a href="https://www.roblox.com/games/6405807112">aPG</a></p>
-            <p>huge credits to the discord thread "all WORKING vip commands" (1080126457872916521)</p>
-            <p>and it's owner TheCat#3522 (777172240927162429)</p>
-            <br><p>ownership belongs to ow9u</p>
-        </div>
+    <header>
+        <hgroup>
+            <h1>ow9u's aPG vip commands cheat sheet</h1>
+            <h2>Cheat sheet for <a href="https://www.roblox.com/games/6405807112">average Plate Gaem</a> Roblox game</h2>
+        </hgroup>
+    </header>
+    <main class="container">
         <div id="commandSections"></div>
-        <input type="text" placeholder="preview" style="width: 100%;">
-    </div>
+        <article>
+            <p>
+                Also thanks to <a href="https://discord.com/users/777172240927162429">TheCat</a> 
+                for <a href="https://discord.com/channels/1057920802999246878/1080126457872916521">the thread</a> 
+                with listed in-game staff
+            </p>
+            <p>
+                And being handsome <i>(maybe)</i>
+            </p>
+        </article>
+    </main>
+    <footer>
+        <small>
+            <a href="https://github.com/picocss/examples/blob/master/v1-classless/index.html">Source code</a>
+        </small>
+    </footer>
+
     <script src="src/index.js"></script>
     <script>
         fetch("src/storage.json")
-        .then(res => res.json())
-        .then((json) => {
-            window.options = json.options
-            options.targetAll = [options.targetPlates,options.targetPlayers].flat()
-
-            initCommandSections(json.commands)
-        })
+            .then(res => res.json())
+            .then((json) => {
+                window.options = json.options
+                options.targetAll = [options.targetPlates,options.targetPlayers].flat()
+                initCommandSections(json.commands)
+            })
     </script>
 </body>
 </html>

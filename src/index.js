@@ -67,7 +67,7 @@ const createParameterDiv = (paramItem, sectionItem) => {
 
     let label = document.createElement("label")
     label.for = paramItem.name
-    label.innerText = paramItem.name + ": "
+    label.innerText = paramItem.name
     div.appendChild(label)
 
     let baseNode
@@ -97,11 +97,10 @@ const createParameterDiv = (paramItem, sectionItem) => {
 }
 
 const addCommandSection = (sectionItem) => {
-    let section = document.createElement("div")
-    section.classList.add("section")
+    let section = document.createElement("section")
     sectionItem.div = section // omg
 
-    let commandTitle = document.createElement("h1")
+    let commandTitle = document.createElement("h2")
     commandTitle.id = "command"
     section.appendChild(commandTitle)
     updateCommandSection(sectionItem)
@@ -115,7 +114,7 @@ const addCommandSection = (sectionItem) => {
 
     let copyButton = document.createElement("button")
     copyButton.id = "copy-button"
-    copyButton.innerText = "Copy command"
+    copyButton.innerText = "Copy as command"
     copyButton.addEventListener("click", copyButtonClick)
     section.appendChild(copyButton)
 
