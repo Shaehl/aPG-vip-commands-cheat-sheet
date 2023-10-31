@@ -114,7 +114,7 @@ const addCommandSection = (sectionItem) => {
 
     let copyButton = document.createElement("button")
     copyButton.id = "copy-button"
-    copyButton.innerText = "Copy as command"
+    copyButton.innerText = "Copy the command"
     copyButton.addEventListener("click", copyButtonClick)
     section.appendChild(copyButton)
 
