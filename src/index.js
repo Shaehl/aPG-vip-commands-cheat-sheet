@@ -122,3 +122,9 @@ const addCommandSection = (sectionItem) => {
 }
 
 const initCommandSections = (arr) => arr.forEach(addCommandSection)
+
+const versionChange = (version) => {
+    let code = document.getElementById("version")
+    if (!(code && version)) return
+    code.innerText = `v${version}`
+}

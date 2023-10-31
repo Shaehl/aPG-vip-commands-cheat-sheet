@@ -32,7 +32,7 @@
     </main>
     <footer>
         <small>
-            <a href="https://github.com/picocss/examples/blob/master/v1-classless/index.html">Source code</a>
+            <code id="version">v0.0</code> • <a href="https://github.com/Shaehl/aPG-vip-commands-cheat-sheet">Source code</a>
         </small>
     </footer>
 
@@ -44,6 +44,7 @@
                 window.options = json.options
                 options.targetAll = [options.targetPlates,options.targetPlayers].flat()
                 initCommandSections(json.commands)
+                versionChange(json.version)
             })
     </script>
 </body>
