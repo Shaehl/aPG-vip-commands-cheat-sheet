@@ -3,7 +3,7 @@ const container = document.body.querySelector("#commandSections")
 const tempNodeDisable = (node) => {
     node.disabled = true
     setTimeout(() => 
-    node.disabled = false, 1000);
+    node.disabled = false, 666);
 }
 
 const copyButtonClick = (e) => {
@@ -20,7 +20,7 @@ const copyButtonClick = (e) => {
 const parseCommand = (item) => {
     let str = "/"
     if (typeof item == "object") {
-        str += item.map(e => {
+        str += item.struct.map(e => {
             switch (typeof e) {
                 case "object":
                     return e.value
@@ -63,12 +63,12 @@ const r = (parentNode, optionsList) => {
 }
 
 const createParameterDiv = (paramItem, sectionItem) => {
-    let div = document.createElement("div")
+    let form = document.createElement("form")
 
     let label = document.createElement("label")
     label.for = paramItem.name
     label.innerText = paramItem.name
-    div.appendChild(label)
+    form.appendChild(label)
 
     let baseNode
     switch (paramItem.type) {
@@ -82,8 +82,9 @@ const createParameterDiv = (paramItem, sectionItem) => {
             break
         default:
             baseNode = document.createElement("input")
-            if (paramItem.value) baseNode.value = paramItem.value
             baseNode.type = paramItem.type
+            let pp = paramItem.params
+            if (pp) Object.keys(pp).forEach(k => baseNode[k] = pp[k])
             break
     }
     if (baseNode) {
@@ -91,9 +92,9 @@ const createParameterDiv = (paramItem, sectionItem) => {
         onParamInput({
             target: baseNode
         }, paramItem, sectionItem)
-        div.appendChild(baseNode)
+        form.appendChild(baseNode)
     }
-    return div
+    return form
 }
 
 const addCommandSection = (sectionItem) => {
@@ -105,7 +106,14 @@ const addCommandSection = (sectionItem) => {
     section.appendChild(commandTitle)
     updateCommandSection(sectionItem)
 
-    sectionItem.forEach(e => {
+    let itemDesc = sectionItem.desc
+    if (itemDesc) {
+        let commandDesc = document.createElement("p")
+        commandDesc.innerText = itemDesc
+        section.appendChild(commandDesc)
+    }
+
+    sectionItem.struct.forEach(e => {
         if (!e.type) return
 
         let node = createParameterDiv(e, sectionItem)
@@ -121,7 +129,13 @@ const addCommandSection = (sectionItem) => {
     container.appendChild(section)
 }
 
-const initCommandSections = (arr) => arr.forEach(addCommandSection)
+const initCommandSections = (arr) => arr.forEach((item) => {
+    try {
+        addCommandSection(item)
+    } catch (err) {
+        console.error(item, err)
+    }
+})
 
 const versionChange = (version) => {
     let code = document.getElementById("version")

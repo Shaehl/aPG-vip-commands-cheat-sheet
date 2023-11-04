@@ -1,50 +1,155 @@
 {
-    "version": "1.7",
+    "version": "1.17",
     "commands": [
-        [
-            "event", 
-            {"name": "event", "type": "select", "optionName": "events"},
-            {"name": "target", "type": "select", "optionName": "targetAll"}
-        ],
-        [
-            "mod",
-            {"name": "modifier", "type": "select", "optionName": "modifiers"}
-        ],
-        [
-            "dif",
-            {"name": "difficulty", "type": "number", "value": 1}
-        ],
-        [
-            "effect", 
-            {"name": "effect", "type": "select", "optionName": "effects"},
-            {"name": "target", "type": "select", "optionName": "targetPlayers"},
-            {"name": "duration", "type": "number", "value": 10}
-        ],
-        ["endgame"],
-        ["startsuddendeath"]
+        {
+            "desc": "Gives an admin to  a player",
+            "struct": [
+                {"name": "adminCommand", "type": "select", "optionName": "adminCommands"},
+                {"name": "target", "type": "select", "optionName": "targetPlayers"}
+            ]
+        },
+        {
+            "desc": "Changes the difficulty",
+            "struct": [
+                "dif",
+                {"name": "difficulty", "type": "range", "params": {"min": 1, "max": 10, "value": 3}}
+            ]
+        },
+        {
+            "desc": "Summons an event",
+            "struct": [
+                "event", 
+                {"name": "event", "type": "select", "optionName": "events"},
+                {"name": "target", "type": "select", "optionName": "targetAll"}
+            ]
+        },
+        {
+            "desc": "Forcefully activates a modifier",
+            "struct": [
+                "mod",
+                {"name": "modifier", "type": "select", "optionName": "modifiers"}
+            ]
+        },
+        {
+            "desc": "Ends the game",
+            "struct": ["endgame"]
+        },
+        {
+            "desc": "Starts sudden death",
+            "struct": ["startsuddendeath"]
+        },
+        {
+            "desc": "Opens the panel",
+            "struct": ["panel"]
+        },
+        {
+            "struct": ["🧀"]
+        },
+        {
+            "desc": "Applies an effect on a player",
+            "struct": [
+                "effect", 
+                {"name": "effect", "type": "select", "optionName": "effects"},
+                {"name": "target", "type": "select", "optionName": "targetPlayers"},
+                {"name": "duration", "type": "number", "params": {"value": 10}}
+            ]
+        },
+        {
+            "desc": "Resizes a player",
+            "struct": [
+                "resize", 
+                {"name": "target", "type": "select", "optionName": "targetPlayers"},
+                {"name": "number", "type": "number", "params": {"value": 1}}
+            ]
+        },
+        {
+            "desc": "Pauses the game",
+            "struct": [
+                {"name": "pauseCommand", "type": "select", "optionName": "pauseCommands"}
+            ]
+        },
+        {
+            "desc": "Forces a map",
+            "struct": [
+                "map",
+                {"name": "map", "type": "select", "optionName": "maps"}
+            ]
+        },
+        {
+            "desc": "Sets the number of modifiers for the next round",
+            "struct": [
+                "modcount",
+                {"name": "number", "type": "range", "params": {"min": 1, "max": 16, "value": 3}}
+            ]
+        },
+        {
+            "desc": "Adds power juicee to a player",
+            "struct": [
+                "addpower", 
+                {"name": "target", "type": "select", "optionName": "targetPlayers"},
+                {"name": "number", "type": "number", "params": {"value": 10}}
+            ]
+        },
+        {
+            "desc": "Freecams",
+            "struct": ["freecam"]
+        }
     ],
     "options": {
+        "adminCommands": ["admin", "unadmin"],
+        "pauseCommands": ["pause", "unpause"],
+        "powersCommands": ["enablepowers", "disablepowers"],
+        "targetPlayers": ["me","all","others","everyone","lobby"],
+        "targetPlates": ["plate-nearest","plate-#","plate-all"],
         "events": [
             {
                 "groupName": "plate",
-                "optionsList": ["moai","anvil","lazar","chair","seat","officechair","throne","rocketchair","trash","bamboo","trains","blackhole","healplate","lightning","snowglobe","legos","pbjtime","lootbox","piano","treadmill","house","shrink","grave","swordfight","grow","timebomb","lightningbarrage","tower","tree","resize","nuke","volcano","trap","lower","raise","landmine","bridge","portal","prison","elevator","meteor","wall","goldentoilet","ufoCrash","beehive","fireplate","motherland","ghostplate","barrelroll","normalizeplate","plateteleport","plateswap","icyplate","spinplate","plateresize","ballplate","tiltedplate","killspinner","orbit","shakyplate","platestretch","thundercloud","lightningstrike","skyscraper","electricfence","explosivebarrel","freezingbarrel","toxicbarrel","tesla","mushroom","toaster","campfire","cauldron","geyser","turret","keg","hotairballoon","discoplate","sunflower","pizza"]
+                "optionsList": ["allgrow","alllower","allraise","allshrink","allstretch","anvil","ballplate","bamboo","barrelroll","beehive","blackhole","bridge","campfire","cauldron","chair","discoplate","electricfence","elevator","explosivebarrel","fireplate","freezingbarrel","geyser","ghostplate","goldentoilet","grave","grow","hotairballoon","house","icyplate","keg","killspinner","landmine","lazar","legos","lightning","lightningbarrage","lightningstrike","lootbox","lower","meteor","moai","motherland","mushroom","normalizeplate","nuke","officechair","orbit","pbjtime","piano","platestretch","plateswap","plateteleport","portal","prison","raise","rocketchair","seat","shakyplate","shrink","skyscraper","snowglobe","spinplate","swordfight","tesla","throne","thundercloud","tiltedplate","timebomb","toaster","tower","toxicbarrel","trains","trap","trash","treadmill","tree","turret","ufocrash","volcano","wall","bank","box","buriedtreasure","desert","freezemine","glassplate","lasercrystal","merchant","palmtree","pierceplate","pizza","pufferfish","pyramid","recycler","scarecrow","sharkattack","sodashake","speaker","spidereggs","sunflower","tightrope","trampoline","wreckingball"]
             },
             {
                 "groupName": "arena",
-                "optionsList": ["missile","eyebeam","hurricane","space","pianobarrage","jellybeans","sandstorm","thunderstorm","pirateship","solarflare","tsunami","lavatsunami","arrowbarrage","firearrowbarrage","molotovbarrage","lootboxrain","zombies","rockets","moonfall","earthquake","acidrain","rainingtix","meteorshower","allStretch","theflop","allgrow","allshrink","alllower","allraise","speedingwall","rollingpin","artillery","tornado","firetornado","seamines","fishhook","noodlespill"]
+                "optionsList": ["acidrain","alieninvasion","arrowbarrage","artillery","earthquake","eyebeam","firearrowbarrage","firetornado","fishhook","jellybeans","lavatsunami","lootboxrain","meteorshower","missile","molotovbarrage","moonfall","noodlespill","pianobarrage","pirateship","rockets","rollingpin","seamines","solarflare","speedingwall","theflop","thunderstorm","tornado","tsunami","descendingswords","galleon","laserplanet","lavaeruption","murdermystery","oilrain","piratebarrelbarrage","pirateinvasion","teslaballs","toxicbombbarrage","trickortreat"]
+            },
+            {
+                "groupName": "big",
+                "optionsList": ["hurricane","rainingtix","sandstorm","space","zombies"]
             },
             {
                 "groupName": "player",
-                "optionsList": ["healthpotion","forcefieldpotion","beans","bomb","bombhead","stink","stronk","freeze","tporb","oneFlop","resizeplayer","gravcoil","teleport","playerswap","tripmine","errorflop","airstrikephone","bananapeel","rocketlauncher","speedcoil","gasolinecan","speedpotion","jumppotion","freezeray","paintballgun","bloxycola","molotov","sword","lightningstaff","tnt"]
+                "optionsList": ["airstrikephone","bananapeel","beans","bloxycola","bomb","bombhead","boomerang","crowbar","errorflop","flamethrower","forcefieldpotion","freeze","freezeray","gasolinecan","gravcoil","healthpotion","jumppotion","lightningstaff","molotov","oneFlop","paintballgun","playerswap","resizeplayer","rocketlauncher","speedcoil","speedpotion","stink","stronk","sword","teleport","tnt","tporb","tripmine","umbrella","meteorstaff","playerbounty","taser","thiefbag","toxicbomb"]
             },
             {
                 "groupName": "random",
-                "optionsList": ["randompotion","barrage","celestial","classics","flopplayer","fallingobjects","lootboxes","nukes","pirateships","randplateeff","randompopup","randomchair","allresize","transport","plateupdown","allupdown","randombuild","randomgear","randplreff","shake","stretch","teleportation","tsunamis","weather","downfall","heavywinds","lightning","randombarrel","tornadoes"]
+                "optionsList": ["allresize","allupdown","barrage","celestial","classics","downfall","fallingobjects","flopplayer","heavywinds","lightning","lootboxes","nukes","pirateships","plateresize","plateupdown","randombarrel","randombuild","randomchair","randomgear","randompopup","randompotion","randplateeff","randplreff","resize","shake","stretch","teleportation","transport","tsunamis","weather","aliens","randomplaceable"]
             }
         ],
-        "modifiers": ["forest","randomgear","risinglava","icyplates","resizedplates","onehp","apocalypse","minefield","nighttime","foggyarena","ballplates","trampolineplates","scatteredplates","city","vanishingplates","stretchedplates","desert"],
-        "effects": ["fire","heal","stun","ragdoll","freeze","bees","forcefield","jumpboost","speed"],
-        "targetPlayers": ["all","others","me"],
-        "targetPlates": ["plate-all","plate-nearest","plate-#"]
+        "modifiers": ["forest","randomgear","risinglava","icyplates","resizedplates","onehp","apocalypse","minefield","nighttime","foggyarena","ballplates","scatteredplates","city","vanishingplates","stretchedplates","desert","housing","glassplates","bombtag","piercedplates","bridges","mushrooms","noregen"],
+        "maps": [
+            {
+                "groupName": "classic",
+                "optionsList": ["normal","camping","islands","tower","disco","wipeout","heights","trains","clockwork","volcano","town","bookshelf"]
+            },
+            {
+                "groupName": "baseplate",
+                "optionsList": ["normal","happyhome","jenga","doomspire","underwater","moon","galleon","box"]
+            },
+            {
+                "groupName": "teams",
+                "optionsList": ["quad","doomspires","cavern","duos","arena","pirates","duel"]
+            },
+            {
+                "groupName": "classic49",
+                "optionsList": []
+            },
+            {
+                "groupName": "baseplate49",
+                "optionsList": []
+            },
+            {
+                "groupName": "teams49",
+                "optionsList": []
+            }
+        ],
+        "effects": ["clear","fire","heal","stun","ragdoll","freeze","bees","forcefield","jumpboost","speed","ghost"]
     }
 }

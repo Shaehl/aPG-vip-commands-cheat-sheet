@@ -41,8 +41,17 @@
         fetch("src/storage.json")
             .then(res => res.json())
             .then((json) => {
-                window.options = json.options
+                let {options} = json
+
+                window.options = options
                 options.targetAll = [options.targetPlates,options.targetPlayers].flat()
+
+                let {maps} = options
+                if (maps) {
+                    maps
+                        .forEach(group => group.optionsList = group.optionsList.map(k => `${group.groupName}.${k}`))
+                }
+
                 initCommandSections(json.commands)
                 versionChange(json.version)
             })
