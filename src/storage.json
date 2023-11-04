@@ -130,24 +130,24 @@
                 "optionsList": ["normal","camping","islands","tower","disco","wipeout","heights","trains","clockwork","volcano","town","bookshelf"]
             },
             {
+                "groupName": "classic49",
+                "optionsList": ["bookshelf","camping","city","colosseum","disco","heights","islands","normal","rocketArena","temple","trains","wipeout"]
+            },
+            {
                 "groupName": "baseplate",
                 "optionsList": ["normal","happyhome","jenga","doomspire","underwater","moon","galleon","box"]
+            },
+            {
+                "groupName": "baseplate49",
+                "optionsList": ["box","doomspire","galleon","happyhome","jenga","normal"]
             },
             {
                 "groupName": "teams",
                 "optionsList": ["quad","doomspires","cavern","duos","arena","pirates","duel"]
             },
             {
-                "groupName": "classic49",
-                "optionsList": []
-            },
-            {
-                "groupName": "baseplate49",
-                "optionsList": []
-            },
-            {
                 "groupName": "teams49",
-                "optionsList": []
+                "optionsList": ["arena","cavern","doomspires","duel","duos","normal","pirates","solarSystem"]
             }
         ],
         "effects": ["clear","fire","heal","stun","ragdoll","freeze","bees","forcefield","jumpboost","speed","ghost"]
